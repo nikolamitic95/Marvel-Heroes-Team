@@ -5,10 +5,10 @@ Application that will allow users to search and bookmark their favorite Marvel c
 
 ## Stack
 
-Language: HTML5, CSS3, JS(ES6+)
-Framework: React
-Library: Bootstrap, Materialize
-Package Manager: npm
+Language: HTML5, CSS3, JS(ES6+) <br />
+Framework: React <br />
+Library: Bootstrap, Materialize <br />
+Package Manager: npm <br />
 Deployment: GitHub Pages
 
 
