@@ -1,0 +1,11 @@
+.btn {
+	display: none !important;
+	position: absolute;
+	top: 0px;
+	right: 100%;
+	width: 50px;
+	height: 75px !important;
+}
+.hvr:hover button {
+	display: block !important;
+}
