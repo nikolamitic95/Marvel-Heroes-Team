@@ -1,9 +1,7 @@
-
-
 ## Marvel-Heroes-Team
 
-
-Application that will allow users to search and bookmark their favorite Marvel characters.
+Application that will allow users to search and bookmark their favorite Marvel characters. <br />
+Fully responsive.
 
 ## Stack
 
