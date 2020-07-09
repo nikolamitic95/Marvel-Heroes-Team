@@ -1,23 +1,26 @@
 
-import { Character, CharacterInfo } from '../Entities/Character';
+import { Character, CharacterInfo } from '../entities/Character';
+import { baseAPI, key } from '../shared/baseApi';
 
 
-const key = `aa3d20826840bd8571b0a17580337f2c`;
 
-const fetchCharacters = () => {
-    return fetch(`http://gateway.marvel.com/v1/public/characters?apikey=${key}`)
-      .then((response) => response.json())
-      .then((res) => res.data.results)
-      .then((res) => res.map((char) => new Character(char)));
+
+class CharacterService {
+
+  getCharacter() {
+
+    return baseAPI.get(`/characters?apikey=${key}`)
+      .then(response => response.data.data.results)
+      .then(characterList => characterList.map(character => new Character(character)))
+      .catch(error => console.log(error))
+  }
+
+  getSingleCharacter = (id) => {
+
+    return baseAPI.get(`/characters/${id}?apikey=${key}`)
+      .then(response => new CharacterInfo(response.data.data.results[0]))
+      .catch(error => console.log(error))
   };
+}
 
-  const fetchSingleCharacter = (id) => {
-    return fetch(`http://gateway.marvel.com/v1/public/characters/${id}?apikey=${key}`)
-      .then((response) => response.json())
-      .then((res) => res.data.results)
-      .then((res) => res.map((char) => new CharacterInfo(char)));
-  };
-
-
-
-export {fetchCharacters, fetchSingleCharacter};
+export const characterService = new CharacterService();
