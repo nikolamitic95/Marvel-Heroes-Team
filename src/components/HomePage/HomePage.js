@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './Home.css';
+import styles from './HomePage.module.css';
 
 import { characterService } from '../../services/characterService';
-import { GridCharacters } from './GridCharacters/GridCharacters';
-import { Container } from 'react-materialize';
-import { Search } from './Search/Search';
+import { Characters } from './GridCharacters/Characters';
+import { Container, Row, Col } from 'react-bootstrap';
+import { SearchCharacters } from './Search/Search';
 import { MyTeam } from './MyTeam/MyTeam';
 import { Header } from '../Header/Header';
 
@@ -27,7 +27,7 @@ class Home extends React.Component {
         const stopedTeam = localStorage.getItem("myTeam");
         characterService.getCharacter()
             .then(data => {
-               return this.setState({
+                return this.setState({
                     heroes: data,
                     filteredHeroes: data,
                     myTeam: stopedTeam ? JSON.parse(stopedTeam) : [],
@@ -35,7 +35,7 @@ class Home extends React.Component {
             })
     }
 
-    searchedCharacters = (textInput) => {
+    searchedHeroes = (textInput) => {
         const newHeroes = this.state.heroes.filter((hero) => {
             return hero.name.toLowerCase().includes(textInput.toLowerCase());
         });
@@ -62,15 +62,29 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div className="relative">
+            <div>
                 <Header />
-                <div className="absolute">
-                    <h3>My Team</h3>
-                    <MyTeam removeHero={this.removeHero} myTeam={this.state.myTeam} />
-                </div>
-                <Container className="main">
-                    <Search searchedCharacters={this.searchedCharacters} />
-                    <GridCharacters myTeamAdd={this.myTeamAdd} filteredHeroes={this.state.filteredHeroes} />
+                <Container fluid>
+                    <Row >
+                        <Col lg="9" >
+                            <SearchCharacters searchedHeroes={this.searchedHeroes} />
+                            <Characters
+                                filteredHeroes={this.state.filteredHeroes}
+                                myTeamAdd={this.myTeamAdd}
+                            />
+                        </Col>
+                        <Col lg="3">
+                            <Row className='justify-content-lg-center'>
+                                <Col lg="12">
+                                    <h4 className={styles.title}>My Team</h4>
+                                    <MyTeam
+                                        myTeam={this.state.myTeam}
+                                        removeHero={this.removeHero}
+                                    />
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
                 </Container>
             </div>
         )

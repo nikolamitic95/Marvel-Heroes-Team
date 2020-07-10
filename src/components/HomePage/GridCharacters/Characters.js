@@ -3,7 +3,7 @@ import {Character} from './Character';
 import {Row} from 'react-materialize'
 
 
-const GridCharacters =({filteredHeroes, myTeamAdd})=> {
+const Characters =({filteredHeroes, myTeamAdd})=> {
    
       return (
         <Row>
@@ -19,4 +19,4 @@ const GridCharacters =({filteredHeroes, myTeamAdd})=> {
       )
 
   }
-  export { GridCharacters };
+  export { Characters };

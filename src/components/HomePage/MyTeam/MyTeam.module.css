@@ -1,11 +1,22 @@
 .btn {
 	display: none !important;
 	position: absolute;
-	top: 0px;
-	right: 100%;
+	top: 1px;
+	left: 16px;
 	width: 50px;
 	height: 75px !important;
+	opacity: 0.8;
 }
-.hvr:hover button {
+
+.card{
+	display: flex;
+	border: 1px solid #797979;
+	margin-bottom: 10px
+}
+.card:hover button{
 	display: block !important;
+}
+.name{
+	margin-left: 25px;
+	padding-top: 27px;
 }

@@ -1,36 +1,26 @@
 import React from 'react';
-import {Navbar, Icon} from 'react-materialize'; 
-import './Search.css';
+import styles from './Search.module.css';
 
+import { Form, FormControl, Row, Col } from 'react-bootstrap';
+import { FaSearch } from 'react-icons/fa';
 
-const Search = ({searchedCharacters}) =>{
+const SearchCharacters = ({ searchedHeroes }) => {
 
-  const  onSearch=(e) =>{
-        const value = e.target.value;
-        searchedCharacters(value)
-
+    const onSearch = (e) => {
+        searchedHeroes(e.target.value)
     }
-
-    return(
-        <Navbar className="white  light-blue darken-1 search"
-        alignLinks="right"  
-        id="mobile-nav" 
-        menuIcon={<Icon>menu</Icon>} 
-        options={{ 
-          draggable: true, 
-          edge: 'left',
-          inDuration: 250,
-          onCloseEnd: null,
-          onCloseStart: null,
-          onOpenEnd: null,
-          onOpenStart: null,
-          outDuration: 200,
-          preventScrolling: true
-        }}
-        search onChange={onSearch}
-      >
-      </Navbar>
+    return (
+        <Row>
+            <Col lg='12'>
+                <span>
+                    <Form >
+                        <FaSearch className={styles.icon} />
+                        <FormControl onChange={onSearch} type="text" placeholder="Search" className={`${styles.input} mr-sm-2 `} />
+                    </Form>
+                </span>
+            </Col>
+        </Row>
     )
 }
 
-export {Search}
+export { SearchCharacters }
