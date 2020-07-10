@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Switch, Route } from 'react-router-dom'
 import { Home } from './components/HomePage/HomePage';
-import { HeroInfo } from './components/HeroInfo/HeroInfo';
+import { HeroInfoPage } from './components/HeroInfoPage/HeroInfoPage';
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/hero-info/:id" component={HeroInfo} />
+        <Route exact path="/hero-info/:id" component={HeroInfoPage} />
       </Switch>
     </div>
   );

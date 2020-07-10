@@ -1,0 +1,9 @@
+.card{
+    display: flex;
+}
+.image{
+    margin-right: 80px;
+}
+.title{
+    margin-bottom: 30px;
+}

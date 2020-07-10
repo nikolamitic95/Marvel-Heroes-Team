@@ -7,7 +7,7 @@ import { Characters } from './GridCharacters/Characters';
 import { Container, Row, Col } from 'react-bootstrap';
 import { SearchCharacters } from './Search/Search';
 import { MyTeam } from './MyTeam/MyTeam';
-import { Header } from '../Header/Header';
+import { Header } from './Header/Header';
 
 console.log(characterService);
 
