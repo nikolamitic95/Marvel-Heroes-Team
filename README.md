@@ -1,7 +1,6 @@
 ## Marvel-Heroes-Team
 
-Application that will allow users to search and bookmark their favorite Marvel characters. <br />
-Fully responsive.
+In this app You can search through all Marvel characters. If You want, it's possible to add character to your team or remove it from team. Fully responsive.
 
 ## Stack
 
