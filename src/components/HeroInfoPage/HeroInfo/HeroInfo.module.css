@@ -11,6 +11,7 @@
     .card {
         display: block;
         justify-content: center;
+        text-align: center;
     }
 }
 @media only screen and (max-width: 780px) {

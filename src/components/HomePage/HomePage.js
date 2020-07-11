@@ -65,7 +65,7 @@ class Home extends React.Component {
             <div>
                 <Header />
                 <Container fluid>
-                    <Row className='justify-content-lg-center'>
+                    <Row className={`${styles.wrapper} justify-content-lg-center`}>
                         <Col lg="9" md='7' sm='5'>
                             <SearchCharacters searchedHeroes={this.searchedHeroes} />
                             <Characters

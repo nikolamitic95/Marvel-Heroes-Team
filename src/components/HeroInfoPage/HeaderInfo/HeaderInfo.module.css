@@ -8,4 +8,8 @@
 }
 .title{
     font-size: 30px;
+    margin-left: 8% !important;
+}
+.link{
+    margin-right: 8% !important;
 }

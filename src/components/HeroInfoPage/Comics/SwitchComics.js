@@ -5,7 +5,7 @@ import { Comic } from './Comic';
 import { DetailedComics } from '../Modal/Modal'
 
 
-const SwitchComics = ({ comics, display, openModal, modalIsOpen, detailsComics}) => {
+const SwitchComics = ({ comics, display, openModal, modalIsOpen, detailsComics }) => {
   return (
     <>
       <DetailedComics

@@ -2,4 +2,9 @@
     text-align: center;
     margin-bottom: 53px;
 }
+@media only screen and (max-width: 575px) {
+    .wrapper {
+      justify-content: center !important;
+    }
+  }
 
