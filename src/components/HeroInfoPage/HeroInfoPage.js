@@ -21,7 +21,7 @@ class HeroInfoPage extends React.Component {
             comicsShown: false,
             fullImage: false,
             modalIsOpen: false,
-            detailsComic: {},
+            detailsComics: {},
         }
     }
 
@@ -44,8 +44,8 @@ class HeroInfoPage extends React.Component {
         this.setState({ comicsShown: !this.state.comicsShown });
     };
 
-    openModal = (detailsComic = {}) => {
-        this.setState(prevState => ({ modalIsOpen: !prevState.modalIsOpen, detailsComic }))
+    openModal = (detailsComics = {}) => {
+        this.setState(prevState => ({ modalIsOpen: !prevState.modalIsOpen, detailsComics }))
     }
 
     render() {
@@ -83,7 +83,7 @@ class HeroInfoPage extends React.Component {
                             display={this.state.comicsShown}
                             openModal={this.openModal}
                             modalIsOpen={this.state.modalIsOpen}
-                            detailsComic={this.state.detailsComic}
+                            detailsComics={this.state.detailsComics}
                         />
                     </Row>
                 </Container>

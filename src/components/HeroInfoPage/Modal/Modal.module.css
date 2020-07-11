@@ -1,0 +1,12 @@
+.name{
+    margin-bottom: 5px;
+}
+.subName{
+    margin-bottom: 20px;
+}
+.name:first-child{
+    margin-top: 30px;
+}
+.img{
+    margin-top: 30px;
+}

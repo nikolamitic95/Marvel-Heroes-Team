@@ -1,32 +1,23 @@
 import React from 'react';
-
 import styles from './Header.module.css';
 
-import { Navbar, Icon } from 'react-materialize';
+import { Navbar } from 'react-bootstrap';
 
 
 
 const Header = () => {
   return (
-    <Navbar className={`${styles.header} grey darken-3`}
-      alignLinks="center"
-      centerChildren
-      brand={<a className="brand-logo">Hero Team</a>}
-      id="mobile-nav"
-      menuIcon={<Icon>menu</Icon>}
-      options={{
-        draggable: true,
-        edge: 'left',
-        inDuration: 250,
-        onCloseEnd: null,
-        onCloseStart: null,
-        onOpenEnd: null,
-        onOpenStart: null,
-        outDuration: 200,
-        preventScrolling: true
-      }}
-    >
-
+    <Navbar className={`${styles.header} justify-content-center`} bg="dark" variant="dark">
+      <Navbar.Brand className={styles.name} href="#home">
+        <img
+          alt=""
+          src="/logo.svg"
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+        />{' '}
+      Hero Team
+    </Navbar.Brand>
     </Navbar>
   )
 }

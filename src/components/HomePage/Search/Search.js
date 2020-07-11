@@ -13,7 +13,7 @@ const SearchCharacters = ({ searchedHeroes }) => {
         <Row>
             <Col lg='12'>
                 <span>
-                    <Form >
+                    <Form className={styles.form}>
                         <FaSearch className={styles.icon} />
                         <FormControl onChange={onSearch} type="text" placeholder="Search" className={`${styles.input} mr-sm-2 `} />
                     </Form>

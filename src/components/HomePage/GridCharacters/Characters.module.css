@@ -4,3 +4,12 @@
 .info{
     margin-right: 15px;
 }
+.name{
+    font-weight: 600 !important;
+    margin-bottom: 20px;
+}
+.card:hover{
+    box-shadow: 0 8px 16px 0 rgba(2,2,2,0.5);
+    background-color: #797979;
+    color: white;
+}

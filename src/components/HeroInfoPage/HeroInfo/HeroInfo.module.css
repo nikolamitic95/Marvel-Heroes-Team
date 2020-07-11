@@ -1,9 +1,25 @@
-.card{
+.card {
     display: flex;
 }
-.image{
+.image {
     margin-right: 80px;
 }
-.title{
+.title {
     margin-bottom: 30px;
+}
+@media only screen and (max-width: 780px) {
+    .card {
+        display: block;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 780px) {
+    .title {
+        margin-top: 30px;
+    }
+}
+@media only screen and (max-width: 780px) {
+    .image {
+        margin-right: 0px;
+    }
 }

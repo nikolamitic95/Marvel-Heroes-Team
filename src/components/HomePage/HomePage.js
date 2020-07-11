@@ -65,15 +65,15 @@ class Home extends React.Component {
             <div>
                 <Header />
                 <Container fluid>
-                    <Row >
-                        <Col lg="9" >
+                    <Row className='justify-content-lg-center'>
+                        <Col lg="9" md='7' sm='5'>
                             <SearchCharacters searchedHeroes={this.searchedHeroes} />
                             <Characters
                                 filteredHeroes={this.state.filteredHeroes}
                                 myTeamAdd={this.myTeamAdd}
                             />
                         </Col>
-                        <Col lg="3">
+                        <Col lg="3" md='5' sm='7'>
                             <Row className='justify-content-lg-center'>
                                 <Col lg="12">
                                     <h4 className={styles.title}>My Team</h4>

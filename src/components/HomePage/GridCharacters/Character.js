@@ -8,14 +8,12 @@ import { Link } from 'react-router-dom';
 
 const Character = ({ name, img, myTeamAdd, id }) => {
 
-
-
     return (
-        <Col lg='4'>
+        <Col lg='4' md='6' sm='12'>
             <Card className={styles.card} style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
-                    <Card.Title>{name}</Card.Title>
+                    <Card.Title className={styles.name}>{name}</Card.Title>
                     <Link to={`/hero-info/${id}`}>
                         <Button className={styles.info} variant="primary">Info</Button>
                     </Link>

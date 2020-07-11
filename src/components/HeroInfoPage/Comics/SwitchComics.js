@@ -5,13 +5,13 @@ import { Comic } from './Comic';
 import { DetailedComics } from '../Modal/Modal'
 
 
-const SwitchComics = ({ comics, display, openModal, modalIsOpen,detailsComic}) => {
+const SwitchComics = ({ comics, display, openModal, modalIsOpen, detailsComics}) => {
   return (
     <>
       <DetailedComics
         modalIsOpen={modalIsOpen}
         openModal={openModal}
-        detailsComic={detailsComic}
+        detailsComics={detailsComics}
       />
       {comics.map(com => (
         <Comic
@@ -19,6 +19,7 @@ const SwitchComics = ({ comics, display, openModal, modalIsOpen,detailsComic}) =
           display={display}
           title={com.name}
           image={com.image}
+          modalImage={com.modalImage}
           prices={com.prices}
           date={com.date}
           openModal={openModal}

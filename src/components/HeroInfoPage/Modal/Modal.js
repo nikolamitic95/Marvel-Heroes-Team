@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import styles from './Modal.module.css';
 
+import { convertDate } from '../../../shared/utilities';
 import { Container, Col, Row } from 'react-bootstrap';
 
 const DetailedComics = ({ modalIsOpen, openModal, detailsComics }) => {
@@ -37,8 +38,21 @@ const DetailedComics = ({ modalIsOpen, openModal, detailsComics }) => {
         contentLabel="modal"
 
     >
-        
-    <p></p>
+        <Container className={styles.modal}>
+            <Row>
+                <Col  lg={{ span: 4, offset: 2 }} md='6' sm='8' xs='12'>
+                    <img className={styles.img} src={detailsComics.modalImage}></img>
+                </Col>
+                <Col lg='4' md='6' sm='4' xs='12'>
+                    <p className={styles.name}>Name:</p>
+                    <h4 className={styles.subName}>{detailsComics.title}</h4>
+                    <p className={styles.name}>Date of Print:</p>
+                    <h4 className={styles.subName}>{convertDate(detailsComics.date)}</h4>
+                    <p className={styles.name}>Price:</p>
+                    <h4 className={styles.subName}>{detailsComics.prices}</h4>
+                </Col>
+            </Row>
+        </Container>
 
     </Modal>)
 }
