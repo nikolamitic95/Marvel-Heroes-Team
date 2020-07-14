@@ -8,8 +8,8 @@
 }
 .title{
     font-size: 30px;
-    margin-left: 8% !important;
+    text-decoration-line: overline;
 }
-.link{
-    margin-right: 8% !important;
+.home{
+    text-decoration-line: overline;
 }

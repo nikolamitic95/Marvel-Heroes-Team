@@ -9,8 +9,6 @@ import { SearchCharacters } from './Search/Search';
 import { MyTeam } from './MyTeam/MyTeam';
 import { Header } from './Header/Header';
 
-console.log(characterService);
-
 
 class Home extends React.Component {
     constructor(props) {
@@ -25,6 +23,7 @@ class Home extends React.Component {
 
     componentDidMount() {
         const stopedTeam = localStorage.getItem("myTeam");
+        // const removeTeam = localStorage.getItem("removeTeam");
         characterService.getCharacter()
             .then(data => {
                 return this.setState({
@@ -58,20 +57,23 @@ class Home extends React.Component {
     removeHero = (id) => {
         let arr = this.state.myTeam.filter((team) => team.id !== id)
         this.setState({ myTeam: arr });
+        // localStorage.setItem("removeTeam", JSON.stringify(myTeam))
     }
 
     render() {
         return (
-            <div>
+            <div >
                 <Header />
                 <Container fluid>
-                    <Row className={`${styles.wrapper} justify-content-lg-center`}>
+                    <Row className='justify-content-lg-center'>
                         <Col lg="9" md='7' sm='5'>
                             <SearchCharacters searchedHeroes={this.searchedHeroes} />
+                            <Row className={styles.content}>
                             <Characters
                                 filteredHeroes={this.state.filteredHeroes}
                                 myTeamAdd={this.myTeamAdd}
                             />
+                            </Row>
                         </Col>
                         <Col lg="3" md='5' sm='7'>
                             <Row className='justify-content-lg-center'>
@@ -90,4 +92,5 @@ class Home extends React.Component {
         )
     }
 }
+
 export { Home }

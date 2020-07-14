@@ -39,7 +39,7 @@ const DetailedComics = ({ modalIsOpen, openModal, detailsComics }) => {
 
     >
         <Container className={styles.modal}>
-            <Row>
+            <Row className={styles.content}>
                 <Col  lg={{ span: 4, offset: 2 }} md='6' sm='8' xs='12'>
                     <img className={styles.img} src={detailsComics.modalImage}></img>
                 </Col>

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const Character = ({ name, img, myTeamAdd, id }) => {
 
     return (
-        <Col lg='4' md='6' sm='12'>
+        <Col lg='4' md='6' sm='12' xs='auto'>
             <Card className={styles.card} style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>

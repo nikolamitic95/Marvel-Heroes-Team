@@ -8,7 +8,7 @@ import { Navbar } from 'react-bootstrap';
 const Header = () => {
   return (
     <Navbar className={`${styles.header} justify-content-center`} bg="dark" variant="dark">
-      <Navbar.Brand className={styles.name} href="#home">
+      <Navbar.Brand className={styles.name}>
         <img
           alt=""
           src="/logo.svg"

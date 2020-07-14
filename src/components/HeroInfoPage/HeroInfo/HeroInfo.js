@@ -8,7 +8,7 @@ import { Col } from 'react-bootstrap';
 const HeroInfo = ({ image, title, description, openFullImage }) => {
   return (
 
-    <Col lg='12'>
+    <Col className={styles.padding} lg='12'>
       <div onClick={openFullImage} className={styles.card}>
         <div className={styles.image}>
           <img src={image}></img>
