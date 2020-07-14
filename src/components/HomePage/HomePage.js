@@ -23,13 +23,12 @@ class Home extends React.Component {
 
     componentDidMount() {
         const stopedTeam = localStorage.getItem("myTeam");
-        // const removeTeam = localStorage.getItem("removeTeam");
         characterService.getCharacter()
             .then(data => {
                 return this.setState({
                     heroes: data,
                     filteredHeroes: data,
-                    myTeam: stopedTeam ? JSON.parse(stopedTeam) : [],
+                    myTeam: stopedTeam ? JSON.parse(stopedTeam) :[]
                 })
             })
     }
@@ -57,7 +56,7 @@ class Home extends React.Component {
     removeHero = (id) => {
         let arr = this.state.myTeam.filter((team) => team.id !== id)
         this.setState({ myTeam: arr });
-        // localStorage.setItem("removeTeam", JSON.stringify(myTeam))
+        localStorage.setItem("myTeam", JSON.stringify(arr))
     }
 
     render() {
