@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Marvel-Heroes-Team/static/css/main.36b6bfb0.chunk.css",
+    "main.js": "/Marvel-Heroes-Team/static/js/main.bd60557e.chunk.js",
+    "main.js.map": "/Marvel-Heroes-Team/static/js/main.bd60557e.chunk.js.map",
+    "runtime-main.js": "/Marvel-Heroes-Team/static/js/runtime-main.909287a1.js",
+    "runtime-main.js.map": "/Marvel-Heroes-Team/static/js/runtime-main.909287a1.js.map",
+    "static/css/2.0732034e.chunk.css": "/Marvel-Heroes-Team/static/css/2.0732034e.chunk.css",
+    "static/js/2.0cecd3b2.chunk.js": "/Marvel-Heroes-Team/static/js/2.0cecd3b2.chunk.js",
+    "static/js/2.0cecd3b2.chunk.js.map": "/Marvel-Heroes-Team/static/js/2.0cecd3b2.chunk.js.map",
+    "index.html": "/Marvel-Heroes-Team/index.html",
+    "precache-manifest.6a31b07def3bfe98f867cb5ae4a7ed42.js": "/Marvel-Heroes-Team/precache-manifest.6a31b07def3bfe98f867cb5ae4a7ed42.js",
+    "service-worker.js": "/Marvel-Heroes-Team/service-worker.js",
+    "static/css/2.0732034e.chunk.css.map": "/Marvel-Heroes-Team/static/css/2.0732034e.chunk.css.map",
+    "static/css/main.36b6bfb0.chunk.css.map": "/Marvel-Heroes-Team/static/css/main.36b6bfb0.chunk.css.map",
+    "static/js/2.0cecd3b2.chunk.js.LICENSE.txt": "/Marvel-Heroes-Team/static/js/2.0cecd3b2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.909287a1.js",
+    "static/css/2.0732034e.chunk.css",
+    "static/js/2.0cecd3b2.chunk.js",
+    "static/css/main.36b6bfb0.chunk.css",
+    "static/js/main.bd60557e.chunk.js"
+  ]
+}
