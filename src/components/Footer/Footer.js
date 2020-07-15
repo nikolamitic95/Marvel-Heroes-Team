@@ -6,7 +6,7 @@ import { Navbar } from 'react-bootstrap';
 const Footer = () => {
   return (
     <Navbar className={`${styles.footer} justify-content-center`} bg="dark" variant="dark">
-      <Navbar.Brand className={styles.name} href="#home">
+      <Navbar.Brand className={styles.name}>
         <img
           alt=""
           src="/logo.svg"
