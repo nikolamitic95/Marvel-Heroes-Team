@@ -1,6 +1,8 @@
 ## Marvel-Heroes-Team
 
-In this app You can search through all Marvel characters. If You want, it's possible to add character to your team or remove it from team. Fully responsive.
+In this app You can search through all Marvel characters. If You want, it's possible to add character to your team or remove it from team. Fully responsive. <br/>
+
+DEMO: [Marvel Heroes Team](https://nikolamitic95.github.io/Marvel-Heroes-Team/#/) 
 
 ## Stack
 
