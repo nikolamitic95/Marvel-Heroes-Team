@@ -6,9 +6,9 @@ DEMO: [Marvel Heroes Team](https://nikolamitic95.github.io/Marvel-Heroes-Team/#/
 
 ## Stack
 
-Language: HTML5, CSS3, JS(ES6+) <br />
-Library: React, Bootstrap, Materialize <br />
-Package Manager: npm <br />
-Deployment: GitHub Pages
+* Language: HTML5, CSS3, JS(ES6+) <br />
+* Library: React, Bootstrap, Materialize <br />
+* Package Manager: npm <br />
+* Deployment: GitHub Pages
 
 
