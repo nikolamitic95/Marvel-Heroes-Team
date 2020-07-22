@@ -1,6 +1,6 @@
 ## Marvel-Heroes-Team
 
-In this app You can search through all Marvel characters. If You want, it's possible to add character to your team or remove it from team. Fully responsive. <br/>
+When App is started User is able to search for all Marvel heroes and have possibility to add heroes to the section My Team Heroes by clicking Add button. When User click on Info button, he is redirected to new page with info about specific Hero. On that page User can show Comics by clicking Show Comics button and clicking on Comic can see more information about that Comic. Full Responsive.
 
 DEMO: [Marvel Heroes Team](https://nikolamitic95.github.io/Marvel-Heroes-Team/#/) 
 
