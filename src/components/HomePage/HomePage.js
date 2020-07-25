@@ -8,6 +8,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { SearchCharacters } from './Search/Search';
 import { MyTeam } from './MyTeam/MyTeam';
 import { Header } from './Header/Header';
+import { Loader } from '../Loader/Loader';
 
 
 class Home extends React.Component {
@@ -18,6 +19,7 @@ class Home extends React.Component {
             heroes: [],
             filteredHeroes: [],
             myTeam: [],
+            isLoading: true
         }
     }
 
@@ -28,9 +30,10 @@ class Home extends React.Component {
                 return this.setState({
                     heroes: data,
                     filteredHeroes: data,
-                    myTeam: stopedTeam ? JSON.parse(stopedTeam) :[]
+                    myTeam: stopedTeam ? JSON.parse(stopedTeam) : []
                 })
             })
+            .finally(() => this.setState({ isLoading: false }))
     }
 
     searchedHeroes = (textInput) => {
@@ -63,30 +66,35 @@ class Home extends React.Component {
         return (
             <div >
                 <Header />
-                <Container fluid>
-                    <Row className='justify-content-lg-center'>
-                        <Col lg="9" md='7' sm='5'>
-                            <SearchCharacters searchedHeroes={this.searchedHeroes} />
-                            <Row className={styles.content}>
-                            <Characters
-                                filteredHeroes={this.state.filteredHeroes}
-                                myTeamAdd={this.myTeamAdd}
-                            />
-                            </Row>
-                        </Col>
-                        <Col lg="3" md='5' sm='7'>
-                            <Row className='justify-content-lg-center'>
-                                <Col lg="12">
-                                    <h4 className={styles.title}>My Team</h4>
-                                    <MyTeam
-                                        myTeam={this.state.myTeam}
-                                        removeHero={this.removeHero}
+                {this.state.isLoading ?
+                    <Loader />
+                    :
+
+                    <Container fluid>
+                        <Row className='justify-content-lg-center'>
+                            <Col lg="9" md='7' sm='5'>
+                                <SearchCharacters searchedHeroes={this.searchedHeroes} />
+                                <Row className={styles.content}>
+                                    <Characters
+                                        filteredHeroes={this.state.filteredHeroes}
+                                        myTeamAdd={this.myTeamAdd}
                                     />
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
-                </Container>
+                                </Row>
+                            </Col>
+                            <Col lg="3" md='5' sm='7'>
+                                <Row className='justify-content-lg-center'>
+                                    <Col lg="12">
+                                        <h4 className={styles.title}>My Team</h4>
+                                        <MyTeam
+                                            myTeam={this.state.myTeam}
+                                            removeHero={this.removeHero}
+                                        />
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+                    </Container>
+                }
             </div>
         )
     }

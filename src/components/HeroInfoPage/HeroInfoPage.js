@@ -10,6 +10,7 @@ import { SwitchComics } from './Comics/SwitchComics';
 import { comicsService } from '../../services/comicsService';
 import { FullImage } from './FullImage/FullImage';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Loader } from '../Loader/Loader';
 
 class HeroInfoPage extends React.Component {
     constructor(props) {
@@ -19,25 +20,23 @@ class HeroInfoPage extends React.Component {
             info: [],
             comics: [],
             comicsShown: false,
-            fullImage: false,
+            isFullImage: false,
             modalIsOpen: false,
             detailsComics: {},
+            isLoading: true
         }
     }
 
     componentDidMount() {
         characterService.getSingleCharacter(this.props.match.params.id)
             .then(data => { this.setState({ info: data }) })
-
         comicsService.getComics(this.props.match.params.id)
             .then(data => { this.setState({ comics: data }) })
+            .finally(() => this.setState({ isLoading: false }))
     }
 
-    openFullImage = () => {
-        this.setState({ fullImage: true })
-    }
-    closeFullImage = () => {
-        this.setState({ fullImage: false })
+    showFullImage = () => {
+        this.setState(prevState => ({ isFullImage: !prevState.isFullImage }))
     }
 
     showComics = (e) => {
@@ -52,41 +51,49 @@ class HeroInfoPage extends React.Component {
         return (
             <>
                 <HeaderInfo />
-                {this.state.fullImage && <FullImage
-                    fullImage={this.state.info.fullImage}
-                    removeImage={this.closeFullImage} />}
-                <Container className={styles.info}>
-                    <Row>
-                        <HeroInfo
-                            key={this.state.info.id}
-                            title={this.state.info.name}
-                            image={this.state.info.image}
-                            description={this.state.info.description}
-                            openFullImage={this.openFullImage}
-                        />
-                    </Row>
-                </Container>
-                <Container>
-                    <Row>
-                        <Col lg='12'>
-                            <Switch
-                                id="Switch-11"
-                                offLabel="Hide Comics"
-                                onChange={this.showComics}
-                                onLabel="Show Comics"
+                {this.state.isLoading ?
+                    <Loader />
+                    :
+                    <>
+                    <Container className={styles.info}>
+                        {/* {this.state.fullImage && <FullImage
+                            fullImage={this.state.info.fullImage}
+                            removeImage={this.closeFullImage} />} */}
+                        <Row>
+                            <HeroInfo
+                                key={this.state.info.id}
+                                title={this.state.info.name}
+                                image={this.state.info.image}
+                                description={this.state.info.description}
+                                showFullImage={this.showFullImage}
+                                isFullImage={this.state.isFullImage}
+                                fullImage={this.state.info.fullImage}
                             />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <SwitchComics
-                            comics={this.state.comics}
-                            display={this.state.comicsShown}
-                            openModal={this.openModal}
-                            modalIsOpen={this.state.modalIsOpen}
-                            detailsComics={this.state.detailsComics}
-                        />
-                    </Row>
-                </Container>
+                        </Row>
+                    </Container>
+                    <Container>
+                        <Row>
+                            <Col lg='12'>
+                                <Switch
+                                    id="Switch-11"
+                                    offLabel="Hide Comics"
+                                    onChange={this.showComics}
+                                    onLabel="Show Comics"
+                                />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <SwitchComics
+                                comics={this.state.comics}
+                                display={this.state.comicsShown}
+                                openModal={this.openModal}
+                                modalIsOpen={this.state.modalIsOpen}
+                                detailsComics={this.state.detailsComics}
+                            />
+                        </Row>
+                    </Container>
+                    </>
+                    }
             </>
 
         )
